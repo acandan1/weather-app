@@ -3,6 +3,19 @@
 import City from './collect';
 import getCityObject from './collect';
 
+import brokenClouds from '../src/icons/brokenclouds.svg';
+import sun from "../src/icons/sun.svg";
+import snow from "../src/icons/snow.svg";
+import showerrain from "../src/icons/showerrain.svg";
+import rain from "../src/icons/rain.svg";
+import thunderstorm from "../src/icons/thunderstorm.svg";
+import mist from "../src/icons/mist.svg";
+
+import temp from '../src/icons/temperature.svg';
+import humidity from '../src/icons/humidity.svg';
+import windspeed from '../src/icons/windspeed.svg';
+
+
 const container = document.getElementsByClassName("container")[0];
 
 export default function eventHandler(cityObject) {
@@ -16,19 +29,19 @@ export default function eventHandler(cityObject) {
 
 function chooseImage(description) {
     if (description.includes("cloud")) {
-        return "../src/icons/brokenclouds.svg";
+        return brokenClouds;
     } else if (description.includes("sky")){
-        return "../src/icons/sun.svg";
+        return sun;
     } else if (description.includes("snow")){
-        return "../src/icons/snow.svg";
+        return snow;
     } else if (description.includes("rain")){
-        return "../src/icons/showerrain.svg";
+        return  showerrain;
     } else if (description.includes("drizzle")){
-        return "../src/icons/rain.svg";
+        return rain;
     } else if (description.includes("thunderstorm")){
-        return "../src/icons/thunderstorm.svg";
+        return thunderstorm;
     } else {
-        return "../src/icons/mist.svg";
+        return mist;
     }
 }
 
@@ -110,7 +123,7 @@ function displayDetailedInformation(cityObject) {
     feelsDiv.id = "feels-like";
     const img1 = document.createElement("img");
     img1.className = "icons right";
-    img1.src = '../src/icons/temperature.svg';
+    img1.src = temp;
     feelsDiv.appendChild(img1);
     const fName = document.createElement("h2");
     fName.id = "f-name";
@@ -131,7 +144,7 @@ function displayDetailedInformation(cityObject) {
     humidityDiv.id = "humidity";
     const img2 = document.createElement("img");
     img2.className = "icons right";
-    img2.src = '../src/icons/humidity.svg';
+    img2.src = humidity;
     humidityDiv.appendChild(img2);
     const hName = document.createElement("h2");
     hName.id = "h-name";
@@ -150,7 +163,7 @@ function displayDetailedInformation(cityObject) {
     windDiv.id = "wind";
     const img3 = document.createElement("img");
     img3.className = "icons right";
-    img3.src = '../src/icons/windspeed.svg';
+    img3.src = windspeed;
     windDiv.appendChild(img3);
     const wName = document.createElement("h2");
     wName.id = "w-name";
